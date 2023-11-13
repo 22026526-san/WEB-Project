@@ -1,0 +1,55 @@
+.wrapper{
+    border: 1px solid black;
+    height: auto;
+    width: 96%;
+    margin: 0 auto;
+}
+
+ul.admin_list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left: 428px;
+}
+
+ul.admin_list li a{
+    float: left;
+    margin: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.clear{
+    clear: both;
+}
+
+h3.title_admin{
+    text-align: center;
+    font-size: 68px;
+    color:#333;
+    font-family: math;
+}
+
+.out{
+    list-style-type: none;
+    margin-left: 428px;
+}
+.out a{
+    text-decoration: none;
+    margin: 5px;
+    font-size: 20px;
+    color: black;
+}
+
+.danhmuc_sp td a{
+    text-decoration: none;
+    color: black;
+}
+
+.sanpham a{
+    text-decoration: none;
+    color: black;
+}
+

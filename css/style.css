@@ -1,0 +1,350 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    border: 1px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main{
+    border: 1px;
+    height: auto;
+    width: 100%;
+    float: left;
+}
+
+.menu{
+    border: 1px;
+    height: 50px;
+    width: 100%;
+    background:  #E95221
+}
+
+.footer{
+    border: 1px;
+    height: 388px;
+    width: 100%; 
+    background-repeat: no-repeat;
+    background-size: 100% 400px;
+    background-image: url(../images/lienhe.png);
+}
+
+/* load banner */
+.header{
+    border: 1px; 
+    flex-direction: column;
+}
+
+.display-area{
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
+}
+
+.wrap{
+    width: 500%;
+    animation: slideshow 16s infinite step-end;
+}
+
+.slide img{
+    float: left;
+    height: 400px;
+    width: 1519px;
+    -webkit-box-reflect: below 1px -web-gradient(linear,right top, right bottom, form(transparent), to(rgba(255,255,255,0.3)));
+}
+
+@keyframes slideshow{
+    20%{
+        margin-left: 0;
+    }
+    30%{
+        margin-left: -100%;
+    }
+    40%{
+        margin-left: -100%;
+    }
+    50%{
+        margin-left: -200%;
+    }
+    60%{
+        margin-left: -200%;
+    }
+    70%{
+        margin-left: -300%;
+    }
+    80%{
+        margin-left: -300%;
+    }
+    90%{
+        margin-left: -400%
+    }
+    100%{
+        margin-left: -400%;
+    }
+}
+/* load banner */
+
+.sidebar{
+    border: 1px;
+    height: 390px;
+    width: 16%;
+    margin-top: 5px;
+    float: left;
+    background: #fff
+}
+
+ul.list_sidebar {
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    line-height: 56px;
+}
+
+ul.list_sidebar li{
+    margin: 7px;
+    padding: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+ul.list_sidebar li a{
+    text-decoration: none;
+    text-align: left;
+    color: #E95221;
+    display: block;
+    margin-left:50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.maincontent{
+    height: auto;
+    width: 82%;
+    margin-top: 5px;
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+ul.list_menu {
+    padding: 0;
+    width: 94%;
+    list-style: none;
+    margin: 0px auto;
+    line-height: 22px;
+}
+
+ul.list_menu li{
+    float: left;
+    margin: 7px;
+    padding: 5px; 
+    cursor: pointer;
+}
+ul.list_menu li img{
+    float: left;
+    width: 60%;
+    margin: -3px 0; 
+}
+
+ul.list_menu li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: math;
+}
+
+ul.product_list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+
+ul.product_list li{
+    width: 19.68%;
+    border: 1px;
+    margin: 1px;
+    float: left;
+    height: 412px;
+}
+
+ul.product_list li img{
+    width: 100%;
+}
+
+ul.product_list li a{
+    text-decoration: none;
+}
+
+p.title_product{
+    text-align: center;
+    font-weight: 500;
+    color: black;
+}
+
+p.price_product{
+    text-align: center;
+    font-weight: 500;
+    color: #E95221;
+}
+
+p.cate_product{
+    text-align: center;
+    color: black;
+}
+
+p.footer_write{
+    text-align: center;
+    color: black;
+}
+
+.wrapper_mota{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hinh_anh_sp{
+    float: left;
+    width: 18%;
+}
+
+.mo_ta{
+    float: left;
+    width: 60%;
+    margin: 40px 10px;
+}
+
+input.button{
+    background: #E95221;
+    color: #fff;
+    padding: 0px 40px;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: .3s;
+    text-transform: uppercase;
+    border: 1px solid #E95221;
+    height: 31px;
+    line-height: 31px;
+    margin-right: 10px;
+    cursor: pointer;   
+}
+
+input.button:hover{
+    background: #fff;
+    color: #E95221;
+}
+
+.dat_hang {
+    width: 99%;
+    background: #e95221;
+    color: #fff;
+    padding: 0px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    text-transform: uppercase;
+    border: 1px solid #e95221;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dat_hang:hover{
+    background-color: #fff;
+    color: #E95221;
+}
+
+.thongtin{
+    width: 40%;
+    margin: 164px auto;
+}
+
+.table{
+    width: 99%;
+    text-align:center;
+    border-collapse:collapse;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.table tr td{
+    padding: 5px;
+}
+
+.title-cart{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #f7f8f9;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    margin-bottom: 0px;
+    margin-right: 13px;
+    margin-left: 0px;
+}
+
+.title-page{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #f7f8f9;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    margin-bottom: 0px;
+    margin-right: 13px;
+    margin-left: 0px;
+}
+
+.erorr{
+    margin-top: 60px;
+    margin-left: 236px;
+}
+
+.list_trang{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left: 16px;
+    margin-top: 30px;
+}
+
+
+
+.list_trang li a{
+    font-weight: 400;
+    float: left;
+    margin: 0 2.5px;
+    width: 30px;
+    background: #fff;
+    border: solid 1px #E95211;
+    text-align: center;
+    height: 30px;
+    font-size: 14px;
+    padding: 0;
+    line-height: 28px;
+    color: #E95211;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.list_trang li a:hover{
+    color: #fff;
+    background: #E95221;
+}
+
+
