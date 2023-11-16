@@ -51,3 +51,42 @@ $query_lietke_dh = mysqli_query($conn, $sql_lietke_dh);
         </td>
     </tr>
 </table>
+
+<?php
+$sql_nv = "SELECT * FROM nhan_vien
+                        INNER JOIN xu_ly_don_hang on nhan_vien.id_nv = xu_ly_don_hang.id_nv
+                        WHERE xu_ly_don_hang.id_dh = '$_GET[code]' ";
+$query_nv = mysqli_query($conn, $sql_nv);
+$row_nv = mysqli_fetch_array($query_nv);
+?>
+
+<p style="margin-left:6px">Nhân Viên Phụ Trách</p>
+<table border="1px" width="50%" style="border-collapse: collapse">
+<form method="POST" action="modules/quanlyDH/xuly.php?code=<?php echo $row_nv['id_dh']?>" enctype="multipart/form-data">
+  <tr>
+    <td>Tên Nhân Viên</td>
+    <td><?php echo $row_nv['ten'] ?></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><?php echo $row_nv['email'] ?></td>
+  </tr>
+  <tr>
+    <td>Tình Trạng Đơn Hàng</td>
+    <td>
+      <select name="tinhtrang_dh">
+        <option value="1">Chưa Xác Nhận</option>
+        <option value="2">Đã Xác Nhận</option>
+        <option value="3">Đang Giao Hàng</option>
+        <option value="4">Đã Nhận Hàng Và Thanh Toán</option>
+        <option value="5">Hàng Bị Hoàn Về</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="submit" name="update" value="Cập Nhật"></td>
+  </tr>
+  </form>
+</table>
+
+

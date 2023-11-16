@@ -33,9 +33,15 @@ $query_lietke_dh = mysqli_query($conn, $sql_lietke_dh);
             <td>
                 <?php
                 if ($row['tinh_trang_dh'] == 1) {
-                    echo "Đã Thanh Toán";
+                    echo "Chưa Xác Nhận";
+                } elseif($row['tinh_trang_dh'] == 2) {
+                    echo "Đã Xác Nhận";
+                } elseif($row['tinh_trang_dh'] == 3) {
+                    echo "Đang Giao Hàng";
+                } elseif($row['tinh_trang_dh'] == 4) {
+                    echo "Đã Nhận Hàng Và Thanh Toán";
                 } else {
-                    echo "Chưa Thanh Toán";
+                    echo "Hàng Bị Hoàn Về";
                 }
                 ?>
             </td>
