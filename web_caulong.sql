@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3308
--- Thời gian đã tạo: Th10 12, 2023 lúc 10:55 AM
+-- Thời gian đã tạo: Th10 16, 2023 lúc 01:28 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -75,7 +75,28 @@ INSERT INTO `chi_tiet_don_hang` (`id_ctdh`, `id_dh`, `id_sp`, `so_luong_dh`) VAL
 (18, 19, 47, 1),
 (19, 19, 50, 1),
 (20, 20, 68, 1),
-(21, 20, 7, 1);
+(21, 20, 7, 1),
+(22, 21, 8, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `co_so`
+--
+
+CREATE TABLE `co_so` (
+  `code_cs` varchar(50) NOT NULL,
+  `dia_chi` varchar(255) DEFAULT NULL,
+  `dien_thoai` varchar(10) DEFAULT NULL,
+  `code_buu_dien` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `co_so`
+--
+
+INSERT INTO `co_so` (`code_cs`, `dia_chi`, `dien_thoai`, `code_buu_dien`) VALUES
+('coso1', '126 Nguyễn Đổng Chi,Nam Từ Liêm, Hà Nội', '0999999999', 'buudien1');
 
 -- --------------------------------------------------------
 
@@ -118,14 +139,15 @@ CREATE TABLE `don_hang` (
 --
 
 INSERT INTO `don_hang` (`id_dh`, `id_kh`, `tinh_trang_dh`, `thoi_gian`) VALUES
-(1, 16, 1, '2023-11-06 15:03:09'),
+(1, 16, 2, '2023-11-06 15:03:09'),
 (2, 17, 1, '2023-11-06 15:03:09'),
 (3, 18, 1, '2023-11-06 15:03:09'),
 (4, 19, 1, '2023-11-06 15:08:40'),
 (5, 20, 1, '2023-11-07 15:10:56'),
 (18, 36, 1, '2023-11-11 14:40:26'),
 (19, 37, 1, '2023-11-11 14:50:48'),
-(20, 38, 1, '2023-11-12 16:44:40');
+(20, 38, 1, '2023-11-12 16:44:40'),
+(21, 39, 2, '2023-11-16 07:10:38');
 
 -- --------------------------------------------------------
 
@@ -153,7 +175,37 @@ INSERT INTO `khach_hang` (`id_kh`, `ten_kh`, `dia_chi`, `so_dt`, `email`) VALUES
 (20, 'Nguyễn Hải Anh ', 'Xuân Đan Nghi Xuân Hà Tĩnh', '0944521521', 'haianh@gmail.com'),
 (36, 'Hoàng Quốc Vương', 'Can Lộc , Hà Tĩnh', '0863152789', 'vuong69@gmail.com'),
 (37, 'Nguyễn Hải Đăng', 'Xuân Giang Nghi Xuân Hà Tĩnh', '0962153488', 'haidang123@gmail.com'),
-(38, 'Nguyễn Hải Anh', 'Nghi Xuân , Hà Tĩnh', '0123456789', 'haianh123@gmail.com');
+(38, 'Nguyễn Hải Anh', 'Nghi Xuân , Hà Tĩnh', '0123456789', 'haianh123@gmail.com'),
+(39, 'Ta Duy Thuyen', 'Mai dịch cầu giầy Hà Nội', '0999333444', 'taduythuyen@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `nhan_vien`
+--
+
+CREATE TABLE `nhan_vien` (
+  `id_nv` int(11) NOT NULL,
+  `ten` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `code_cs` varchar(50) DEFAULT NULL,
+  `chuc_vu` varchar(50) DEFAULT NULL,
+  `luong` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `nhan_vien`
+--
+
+INSERT INTO `nhan_vien` (`id_nv`, `ten`, `email`, `code_cs`, `chuc_vu`, `luong`) VALUES
+(1, 'Nguyen Hoang Diep', 'nguyenhoangdiep@gmail.com', 'coso1', 'nhanvien', '5000000'),
+(2, 'Vo Quang Sang', 'voquangsang@gmail.com', 'coso1', 'nhanvien', '5000000'),
+(3, 'Ta Duy Thuyen', 'taduythuyen@gmail.com', 'coso1', 'nhanvien', '5000000'),
+(4, 'Truong Duc Quang', 'truongducquang@gmail.com', 'coso1', 'quanli', '5000000'),
+(5, 'Nguyen Quang Sang', 'nguyenquangsang@gmail.com', 'coso1', 'nhanvien', '5000000'),
+(6, 'Vo Hoang Diep', 'vohoangdiep@gmail.com', 'coso1', 'nhanvien', '5000000'),
+(7, 'Nguyen Duy Hung', 'nguyenduyhung@gmail.com', 'coso1', 'nhanvien', '5000000'),
+(8, 'Tran Quang Khai', 'tranquangkhai@gmail.com', 'coso1', 'nhanvien', '5000000');
 
 -- --------------------------------------------------------
 
@@ -277,7 +329,33 @@ INSERT INTO `san_pham` (`ten_sp`, `ma_sp`, `hinh_anh`, `mo_ta`, `so_luong`, `gia
 ('Quần Cầu Lông Yonex K001 ', 'VN6851', '1699781628_Screenshot 2023-11-12 163230.png', '', '1100', 250000, 98, 1, 12),
 ('Váy Cầu Lông Yonex 943', 'VN943', '1699781736_Screenshot 2023-11-12 163427.png', '', '1200', 250000, 99, 1, 12),
 ('Váy Cầu Lông Yonex 9018', 'VN9018', '1699781828_Screenshot 2023-11-12 163606.png', '', '1300', 250000, 100, 1, 12),
-('Áo Cầu Lông Yonex 6501 ', 'VN8633', '1699782457_Screenshot 2023-11-12 161824.png', '', '1100', 13, 101, 1, 12);
+('Áo Cầu Lông Yonex 6501 ', 'VN8633', '1699834656_Screenshot 2023-11-12 161824.png', '', '1100', 130000, 101, 1, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `xu_ly_don_hang`
+--
+
+CREATE TABLE `xu_ly_don_hang` (
+  `id_dh` int(11) NOT NULL,
+  `id_nv` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `xu_ly_don_hang`
+--
+
+INSERT INTO `xu_ly_don_hang` (`id_dh`, `id_nv`) VALUES
+(1, 7),
+(2, 8),
+(3, 5),
+(4, 6),
+(5, 2),
+(18, 3),
+(19, 4),
+(20, 1),
+(21, 8);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -296,6 +374,12 @@ ALTER TABLE `chi_tiet_don_hang`
   ADD PRIMARY KEY (`id_ctdh`),
   ADD KEY `fk_id_donhang` (`id_dh`),
   ADD KEY `fk_id_sanpham` (`id_sp`);
+
+--
+-- Chỉ mục cho bảng `co_so`
+--
+ALTER TABLE `co_so`
+  ADD PRIMARY KEY (`code_cs`);
 
 --
 -- Chỉ mục cho bảng `danh_muc`
@@ -317,11 +401,25 @@ ALTER TABLE `khach_hang`
   ADD PRIMARY KEY (`id_kh`);
 
 --
+-- Chỉ mục cho bảng `nhan_vien`
+--
+ALTER TABLE `nhan_vien`
+  ADD PRIMARY KEY (`id_nv`),
+  ADD KEY `co_so_fk` (`code_cs`);
+
+--
 -- Chỉ mục cho bảng `san_pham`
 --
 ALTER TABLE `san_pham`
   ADD PRIMARY KEY (`id_sp`),
   ADD KEY `fk_id_danhmuc` (`id_dm`);
+
+--
+-- Chỉ mục cho bảng `xu_ly_don_hang`
+--
+ALTER TABLE `xu_ly_don_hang`
+  ADD KEY `id_dh_fk` (`id_dh`),
+  ADD KEY `id_nv_fk` (`id_nv`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -337,25 +435,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `id_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `danh_muc`
 --
 ALTER TABLE `danh_muc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `id_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `khach_hang`
 --
 ALTER TABLE `khach_hang`
-  MODIFY `id_kh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_kh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT cho bảng `nhan_vien`
+--
+ALTER TABLE `nhan_vien`
+  MODIFY `id_nv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `san_pham`
@@ -381,10 +485,23 @@ ALTER TABLE `don_hang`
   ADD CONSTRAINT `fk_id_khachhang` FOREIGN KEY (`id_kh`) REFERENCES `khach_hang` (`id_kh`) ON UPDATE CASCADE;
 
 --
+-- Các ràng buộc cho bảng `nhan_vien`
+--
+ALTER TABLE `nhan_vien`
+  ADD CONSTRAINT `co_so_fk` FOREIGN KEY (`code_cs`) REFERENCES `co_so` (`code_cs`) ON UPDATE CASCADE;
+
+--
 -- Các ràng buộc cho bảng `san_pham`
 --
 ALTER TABLE `san_pham`
   ADD CONSTRAINT `fk_id_danhmuc` FOREIGN KEY (`id_dm`) REFERENCES `danh_muc` (`id`) ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `xu_ly_don_hang`
+--
+ALTER TABLE `xu_ly_don_hang`
+  ADD CONSTRAINT `id_dh_fk` FOREIGN KEY (`id_dh`) REFERENCES `don_hang` (`id_dh`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_nv_fk` FOREIGN KEY (`id_nv`) REFERENCES `nhan_vien` (`id_nv`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
